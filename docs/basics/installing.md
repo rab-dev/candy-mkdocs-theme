@@ -13,7 +13,7 @@ You can obtain the source from github:
 
 ~~~~
 # copy source to local disk
-git clone https://github.com/rab-dev/shine-mkdocs-theme .
+git clone https://github.com/rab-dev/shine-mkdocs-theme
 ~~~~
 
 ## Install from source
