@@ -1,41 +1,68 @@
 <!-- Footer -->
-<div class="footer w3-bottom" style="z-index: 5;">
-  <div class="w3-bar">
-    <!-- previous and next links to cycle through the pages. -->
-    {% if page.next_page or page.previous_page %}
-      <div class="w3-container w3-col w3-col-middle w3-center w3-padding">
-        <div class="w3-left w3-medium">
-          {% if page.previous_page %}
-            <a href="{{ page.previous_page.url|url }}" title="{{ page.previous_page.title }}">
-              <span class="w3-hide-small">{{ page.previous_page.title }}</span>
-              <br/>
-              &#8592; Prev
-            </a>
-          {% else %}
-            &#8592; Prev
-          {% endif %}
-        </div>
-        <span class="w3-small w3-text-grey">
-        </span>
-        <div class=" w3-right w3-medium">
-          {% if page.next_page %}
-            <a href="{{ page.next_page.url|url }}" title="{{ page.next_page.title }}">
-              <span class="w3-hide-small">{{ page.next_page.title }}</span>
-              <br/>
-              Next &#8594;
-            </a>
-          {% else %}
-            Next &#8594;
-          {% endif %}
-        </div>
-      </div>
-    {% endif %}
+<div class="footer w3-bottom w3-text-grey" style="z-index: 5;">
+  <table>
+    <tr>
 
-  </div>
-  <div class="w3-container w3-right w3-text-grey">
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">
-      MkDocs + RabTheme
-    </a></p>
-  </div>
+      <!-- left column -->
+      <td class="footer-left">
+        {% if page %}
+
+          <!-- build version -->
+          {% if page.is_homepage %}
+            <div class="version">
+              {{ build_date_utc.strftime('%Y-%m-%d') }}
+            </div>
+          {% endif %}
+
+          <!-- link to previous page -->
+          {% if page.previous_page and not page.is_homepage %}
+            <div class="page-prev w3-medium">
+              <a href="{{ page.previous_page.url|url }}" title="{{ page.previous_page.title }}">
+                &#8592; Prev
+                <br/>
+                <span class="w3-hide-small">{{ page.previous_page.title }}</span>
+              </a>
+            </div>
+          {% endif %}
+
+        {% endif %}
+      </td>
+
+      <!-- middle column -->
+      <td class="footer-center">
+        {% if page %}
+        {% endif %}
+      </td>
+
+      <!-- right column -->
+      <td class="footer-right">
+        {% if page %}
+
+          <!-- link to next page -->
+          {% if not page.is_homepage and page.next_page %}
+            <div class="page-next w3-medium">
+              <a href="{{ page.next_page.url|url }}" title="{{ page.next_page.title }}">
+                Next &#8594;
+                <br/>
+                <span class="w3-hide-small">{{ page.next_page.title }}</span>
+              </a>
+            </div>
+          {% endif %}
+
+          <!-- powered by -->
+          {% if page.is_homepage %}
+            <div class="poweredby">
+              Powered by
+              <a href="https://github.com/rab-dev/shine-mkdocs-theme" target="_blank">
+                MkDocs + ShineTheme
+              </a>
+            </div>
+          {% endif %}
+
+        {% endif %}
+      </td>
+
+    </tr>
+  </table>
 </div>
 
