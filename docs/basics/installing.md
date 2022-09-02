@@ -13,7 +13,7 @@ You can obtain the source from github:
 
 ~~~~
 # copy source to local disk
-git clone https://github.com/rab-dev/shine-mkdocs-theme
+git clone https://github.com/rab-dev/candy-mkdocs-theme
 ~~~~
 
 ## Install from source
@@ -21,6 +21,6 @@ git clone https://github.com/rab-dev/shine-mkdocs-theme
 To install from source run the `setup.py` command:
 
 ~~~~
-cd shine-mkdocs-theme
+cd candy-mkdocs-theme
 py setup.py install
 ~~~~
