@@ -8,7 +8,7 @@ title: Index
   </h2>
   <hr />
   <h1>
-    Mkdocs Candy Theme
+    Mkdocs Shine Theme
   </h1>
   <hr />
   <div class="w3-text-grey">
